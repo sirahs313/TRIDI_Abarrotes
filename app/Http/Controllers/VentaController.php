@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Producto;
+use App\Models\Venta;
+use App\Models\DetalleVenta;
+use Illuminate\Support\Facades\DB;
 
 class VentaController extends Controller
 {
