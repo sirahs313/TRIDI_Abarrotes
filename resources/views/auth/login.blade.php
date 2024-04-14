@@ -17,7 +17,7 @@
                     <img class="profile-img" src="img/user.png" alt="">
                     <form class="form-signin" method="POST" action="{{ route('login') }}">
                         @csrf <!-- Agrega el token CSRF para protección -->
-                        <input type="text" name="email" class="form-control" placeholder="Usuario" required autofocus>
+                        <input type="text" name="email" class="form-control" placeholder="Correo" required autofocus>
                         <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
                         <label class="checkbox pull-left">
