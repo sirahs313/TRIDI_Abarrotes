@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VentaController;
+use App\Http\Controllers\FichajeController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -13,5 +15,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/ventas/create', [VentaController::class, 'create'])->name('ventas.create');
-Route::post('/ventas', [VentaController::class, 'store'])->name('ventas.store');
+Route::post('/fichajes/entrada', [FichajeController::class, 'registrarEntrada']);
+Route::patch('/fichajes/salida/{id}', [FichajeController::class, 'registrarSalida']);
