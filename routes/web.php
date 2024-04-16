@@ -8,8 +8,11 @@ use App\Http\Controllers\FichajeController;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
+
+
+
 
 Route::get('categorias/dex',[CategoriaController::class,'index'])->name('categorias.index');
 Route::get('categorias/create',[CategoriaController::class,'create'])->name('categorias.create');
@@ -19,7 +22,6 @@ Route::get('categorias/{id}/edit',[CategoriaController::class,'edit'])->name('ca
 Route::Put('categorias/{id}',[CategoriaController::class,'update'])->name('categorias.update');
 Route::delete('categorias/{id}',[CategoriaController::class,'destroy'])->name('categorias.destroy');
 
-Route::get('principal', [UserController::class, 'home'])->name('principal'); // Corregido aquí
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
