@@ -17,8 +17,7 @@
     <div class="card">
         <div class="card-header">
             <!-- Botón para abrir el modal de creación -->
-            
-            <a href="{{ route('categorias.create')}}" class="btn btn-primary">crear</a>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCrearCategoria">Crear</button>
         </div>
         <div class="card-body">
             <h5 class="card-title">Lista</h5>
@@ -81,6 +80,33 @@
                     </tr>
                 </tfoot>
             </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de creación de categorías -->
+<div class="modal fade" id="modalCrearCategoria" tabindex="-1" aria-labelledby="modalCrearCategoriaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCrearCategoriaLabel">Crear Categoría</h5>
+                <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Contenido del formulario de creación -->
+                <form action="{{ route('categorias.store') }}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="codigo" class="form-label">Código</label>
+                        <input type="text" name="codigo" id="codigo" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" name="nombre" id="nombre" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-success">Guardar</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
