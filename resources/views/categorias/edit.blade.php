@@ -1,5 +1,15 @@
 @extends('templeate.plantilla')
 @section('Contenedor')
+
+<hr>
+    <h1>.................TIENDA "LA MORENA"..............................................................................</h1>
+<hr>
+<hr>
+<hr>
+    <h1>Edita tu producto</h1>
+<hr>
+<hr>
+<hr>
 <form action="{{route('categorias.update',$categoria->id)}}" method="POST">
 @csrf
 @method('PUT')
