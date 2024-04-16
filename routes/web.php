@@ -39,10 +39,14 @@ Route::put('/users/{user}', [UserController::class, 'update'])->name('users.upda
 
 Route::get('/productos', [ProductoController::class, 'index'])->name('producto.index');
 
+Route::get('/ventas', [App\Http\Controllers\VentaController::class, 'index'])->name('ventas');
+Route::post('/ventas', [App\Http\Controllers\VentaController::class, 'store'])->name('ventas.store');
+
 Route::get('/compras', [App\Http\Controllers\CompraController::class, 'index'])->name('compras');
 Route::post('/compras', [App\Http\Controllers\CompraController::class, 'store'])->name('compras.store');
 Route::get('/proveedores', [ProveedorController::class, 'index'])->name('proveedores.index');
 Route::post('/proveedores', [ProveedorController::class, 'store'])->name('proveedores.store');
+
 
 Route::get('/fichaje', [FichajeController::class, 'index'])->name('fichaje.index');
 Route::post('/fichaje/entrada', [FichajeController::class, 'registrarEntrada'])->name('fichaje.entrada');

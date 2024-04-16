@@ -50,7 +50,7 @@
         <div class="welcome-message">Bienvenido, {{ Auth::user()->name }}</div>
         <ul class="nav flex-column mt-4">
             <li class="nav-item">
-                <a class="nav-link active" href="">Ventas</a>
+                <a class="nav-link active" href="{{ route('ventas') }}">Ventas</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('compras') }}">Compras</a>

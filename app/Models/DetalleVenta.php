@@ -13,6 +13,6 @@ class DetalleVenta extends Model
 
     public function venta()
     {
-        return $this->belongsTo(Ventas::class);
+        return $this->belongsTo(Venta::class);
     }
 }

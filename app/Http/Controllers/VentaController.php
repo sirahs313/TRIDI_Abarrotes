@@ -4,68 +4,34 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
-use App\Models\Venta;
 use App\Models\DetalleVenta;
 use Illuminate\Support\Facades\DB;
+use App\Models\Venta;
 
 class VentaController extends Controller
 {
     
-    public function create()
+    public function index()
     {
+        $prods = Producto::all();
         
-        $productos = Producto::all(); 
-        return view('ventas.create', compact('productos'));
+        return view('ventas.create', ['prods' => $prods]);
     }
 
+    public function store(Request $request){
+        $venta = new Venta();
+        $venta->Fecha = $request->input('fecha');
+        $venta->Total = $request->input('total');
+        $venta->Cliente = $request->input('cliente');
+        $venta->save();
 
-    public function store(Request $request)
-    {
-        
-        $request->validate([
-            'productos' => 'required|array',
-            'productos.*.id' => 'required|exists:productos,id',
-            'productos.*.cantidad' => 'required|numeric|min:1',
-           
-        ]);
+        $partvta = new DetalleVenta();
+        $partvta->Venta = $venta->id;
+        $partvta->Producto = $request->input('nombreProducto');
+        $partvta->Subtotal = $request->input('total');
+        $partvta->Cantidad = $request->input('cantidad');
+        $partvta->save();
 
-        DB::beginTransaction();
-        try {
-            $venta = new Venta();
-           
-            $venta->save();
-
-            $total = 0;
-            foreach ($request->productos as $prod) {
-                $producto = Producto::find($prod['id']);
-                $detalle = new DetalleVenta();
-                $detalle->venta_id = $venta->id;
-                $detalle->producto_id = $producto->id;
-                $detalle->cantidad = $prod['cantidad'];
-                $detalle->precio = $producto->precio;
-                $detalle->save();
-
-                
-                $producto->cantidad -= $prod['cantidad'];
-                $producto->save();
-
-                $total += $detalle->precio * $detalle->cantidad;
-            }
-
-            $venta->total = $total;
-            $venta->save();
-
-        
-            DB::commit();
-
-         
-            return response()->json(['success' => 'Venta registrada correctamente', 'venta_id' => $venta->id]);
-        } catch (\Exception $e) {
-           
-            DB::rollback();
-            return response()->json(['error' => 'Error al registrar la venta'], 500);
-        }
+        return redirect()->route('ventas')->with('message', 'VEnta agregada correctamente');
     }
-
-    
 }

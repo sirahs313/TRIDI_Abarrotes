@@ -14,13 +14,12 @@ return new class extends Migration
         Schema::create('detalle_ventas', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('Venta')->unsigned();
-            $table->bigInteger('Producto')->unsigned();
+            $table->string('Producto');
             $table->float('Subtotal');
             $table->integer('Cantidad');
             $table->timestamps();
 
             $table->foreign('Venta')->references('id')->on('ventas')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('Producto')->references('id')->on('productos');
         });
     }
 
