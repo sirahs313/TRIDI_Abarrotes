@@ -13,7 +13,7 @@
             </div>
         </form>
     </div>
-
+    <hr>
     <div class="card">
         <div class="card-header">
             <!-- Botón para abrir el modal de creación -->
