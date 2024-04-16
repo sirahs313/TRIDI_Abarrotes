@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Ventas extends Model
+class Venta extends Model
 {
     use HasFactory;
 
@@ -13,6 +13,6 @@ class Ventas extends Model
 
     public function detalleVenta()
     {
-        return $this->hasOne(DetalleVentas::class);
+        return $this->hasOne(DetalleVenta::class);
     }
 }
