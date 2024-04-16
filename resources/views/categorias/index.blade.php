@@ -22,7 +22,7 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">Lista</h5>
-            <table class="table"> 
+            <table class="table table table-striped table-bordered"> 
                 <thead>
                     <th>id</th>
                     <th>codigo</th>
