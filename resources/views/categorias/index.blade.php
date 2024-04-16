@@ -2,7 +2,7 @@
 @extends('templeate.plantilla')
 
 @section('Contenedor')
-    <hr>
+<div class="container" style="margin-left: 250px;">
     <h1>TIENDA LA MORENA</h1>
     <hr>
     <div class="d-md-flex justify-content-md-end">
@@ -14,14 +14,13 @@
         </form>
     </div>
 
-
     <div class="card">
         <div class="card-header">
             <a href="{{ route('categorias.create')}}" class="btn btn-primary">crear</a>
         </div>
         <div class="card-body">
             <h5 class="card-title">Lista</h5>
-            <table class="table table table-striped table-bordered"> 
+            <table class="table"> 
                 <thead>
                     <th>id</th>
                     <th>codigo</th>
@@ -54,7 +53,9 @@
             </table>
         </div>
     </div>
+</div>
 @endsection
+
 @section('scripts')
 <script>
   $('#frmDatos').on('submit', function(e) {
