@@ -116,5 +116,6 @@
         right: 0;
         z-index: 1050;
     }
+    
 </style>
 @endsection

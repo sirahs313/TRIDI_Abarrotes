@@ -6,6 +6,7 @@
     <h1>........................TIENDA LUPITA........................................</h1>
     </div>
 <hr>
+
 <hr>
 <div class="contenedor">
     <h1>CREA tu producto</h1>
