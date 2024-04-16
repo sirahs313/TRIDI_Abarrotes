@@ -17,7 +17,10 @@ return new class extends Migration
             $table->string('Puesto');
             $table->string('Telefono');
             $table->string('Direccion');
+            $table->bigInteger('User')->unsigned();
+
             $table->timestamps();
+            $table->foreign('User')->references('id')->on('users');
         });
     }
 

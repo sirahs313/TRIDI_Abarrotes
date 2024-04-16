@@ -18,7 +18,7 @@ class VentaController extends Controller
         return view('ventas.create', compact('productos'));
     }
 
-   
+
     public function store(Request $request)
     {
         

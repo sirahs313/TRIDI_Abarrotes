@@ -1,3 +1,4 @@
+@include('navbar')
 {{-- resources/views/ventas/create.blade.php --}}
 @extends('layouts.app')
 

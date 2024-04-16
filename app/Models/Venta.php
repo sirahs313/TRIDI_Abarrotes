@@ -10,4 +10,9 @@ class Ventas extends Model
     use HasFactory;
 
     protected $fillable = ['Fecha','Total','Cliente'];
+
+    public function detalleVenta()
+    {
+        return $this->hasOne(DetalleVentas::class);
+    }
 }

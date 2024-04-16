@@ -10,4 +10,9 @@ class Proveedores extends Model
     use HasFactory;
 
     protected $fillable = ['Nombre','Telefono','Direccion'];
+
+    public function Compra()
+    {
+        return $this->belongsToMany(Compra::class);
+    }
 }

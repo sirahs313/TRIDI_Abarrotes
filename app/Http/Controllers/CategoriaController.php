@@ -15,7 +15,7 @@ class CategoriaController extends Controller
     {
         $busqueda=$request->busqueda;
         $categorias= categoria::where('codigo','LIKE','%'.$busqueda.'%')
-                     ->orWhere('nombre','LIKE','%'.$busqueda.'%')
+                    ->orWhere('nombre','LIKE','%'.$busqueda.'%')
                     ->latest('id')
                     ->paginate(2);
         $data=[

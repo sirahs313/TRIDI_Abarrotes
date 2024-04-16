@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VentaController;
@@ -23,3 +24,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/ventas/create', [VentaController::class, 'create'])->name('ventas.create');
 Route::post('/ventas', [VentaController::class, 'store'])->name('ventas.store');
+
+Route::get('/productos', [ProductoController::class, 'index'])->name('producto.index');

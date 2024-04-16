@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
-            $table->string('Nombre');
+            $table->string('descrip');
+            $table->integer('stock');
             $table->float('PU');
-            $table->integer('Stock');
-            $table->date('FechaVen');
-            $table->string('Proveedor');
+            $table->bigInteger('Categoria')->unsigned();
             $table->timestamps();
+
+            $table->foreign('Categoria')->references('id')->on('categorias')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

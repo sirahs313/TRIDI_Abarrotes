@@ -17,7 +17,7 @@
                     {{ __('You are logged in!') }}
 
                     <!-- Botón de logout -->
-                   
+                
                 </div>
             </div>
         </div>

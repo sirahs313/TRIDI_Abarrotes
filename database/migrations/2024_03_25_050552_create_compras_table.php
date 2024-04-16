@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Ventas;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('detalle_ventas', function (Blueprint $table) {
+        Schema::create('compras', function (Blueprint $table) {
             $table->id();
-            $table->integer('Venta')->unsigned();
-            $table->string('Producto');
-            $table->float('Subtotal');
-            $table->integer('Cantidad');
+            $table->date('Fecha');
+            $table->float('Total');
+            $table->bigInteger('Proveedor')->unsigned();
             $table->timestamps();
+
+            $table->foreign('Proveedor')->references('id')->on('proveedores')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('detalle_ventas');
+        Schema::dropIfExists('compras');
     }
 };
