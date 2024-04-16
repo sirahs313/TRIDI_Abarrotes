@@ -2,7 +2,6 @@
 @extends('templeate.plantilla')
 
 @section('Contenedor')
-<div class="container" style="margin-left: 250px;">
     <h1>TIENDA LA MORENA</h1>
     <hr>
     <div class="d-md-flex justify-content-md-end">
@@ -53,7 +52,6 @@
             </table>
         </div>
     </div>
-</div>
 @endsection
 
 @section('scripts')
