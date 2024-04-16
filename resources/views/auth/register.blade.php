@@ -6,7 +6,70 @@
     <title>Registro</title>
     <!-- Enlaces CSS -->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link href="css/login.css" rel="stylesheet">
+    <style media="screen">
+        /* Estilos CSS */
+        body {
+            background-color: #080710;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .login-title {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .account-wall {
+            background-color: rgba(255, 255, 255, 0.13);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 50px 35px;
+        }
+
+        .form-signin {
+            margin-bottom: 0;
+        }
+
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.07);
+            border-radius: 3px;
+            color: #ffffff;
+        }
+
+        .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-primary {
+            background-color: #ffffff;
+            color: #080710;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: #f0f0f0;
+        }
+
+        .new-account {
+            text-align: center;
+            color: #ffffff;
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+
+        .new-account:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -14,7 +77,7 @@
             <div class="col-sm-6 col-md-4 col-md-offset-4">
                 <h1 class="text-center login-title">Regístrate</h1>
                 <div class="account-wall">
-                    <img class="profile-img" src="img/user.png" alt="">
+                    <!-- <img class="profile-img" src="img/user.png" alt=""> -->
                     <form class="form-signin" method="POST" action="{{ route('register') }}" onsubmit="return validateForm()">
                         @csrf <!-- Agrega el token CSRF para protección -->
                         <input type="text" name="name" class="form-control" placeholder="Usuario" required autofocus>
