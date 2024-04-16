@@ -18,7 +18,7 @@
         <div class="card-header">
             <!-- Botón para abrir el modal de creación -->
             
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCrearCategoria">Crear</button>
+            <a href="{{ route('categorias.create')}}" class="btn btn-primary">crear</a>
         </div>
         <div class="card-body">
             <h5 class="card-title">Lista</h5>
