@@ -4,6 +4,9 @@ use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VentaController;
+use App\Http\Controllers\FichajeController;
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -16,13 +19,8 @@ Route::get('categorias/{id}/edit',[CategoriaController::class,'edit'])->name('ca
 Route::Put('categorias/{id}',[CategoriaController::class,'update'])->name('categorias.update');
 Route::delete('categorias/{id}',[CategoriaController::class,'destroy'])->name('categorias.destroy');
 
-Route::get('principal', [UserController::class, 'home']);
+Route::get('principal', [UserController::class, 'home'])->name('principal'); // Corregido aquí
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-Route::get('/ventas/create', [VentaController::class, 'create'])->name('ventas.create');
-Route::post('/ventas', [VentaController::class, 'store'])->name('ventas.store');
-
 Route::get('/productos', [ProductoController::class, 'index'])->name('producto.index');
