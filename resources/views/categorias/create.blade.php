@@ -1,5 +1,7 @@
 @extends('templeate.plantilla')
 @section('Contenedor')
+
+
 <form action="{{route('categorias.store')}}" method="POST">
 @csrf
 <div>

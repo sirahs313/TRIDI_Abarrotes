@@ -11,19 +11,18 @@ class FichajeController extends Controller
 {
     public function index()
     {
-<<<<<<< HEAD
         $fichajes = Fichaje::with('empleado') 
                     ->orderBy('hora_entrada', 'desc')
                     ->get();
     
         return view('fichaje', ['fichajes' => $fichajes]);  
-=======
+
         $fichajes = Fichaje::with('empleado')  // Asegúrate de que la relación 'empleado' está definida en el modelo Fichaje
             ->orderBy('hora_entrada', 'desc')
             ->get();
 
         return view('fichaje', ['fichajes' => $fichajes]);  // Pasando la variable a la vista
->>>>>>> f519935ddd9692260d6fab90095c241760258771
+
     }
 
 
