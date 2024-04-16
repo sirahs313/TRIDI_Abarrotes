@@ -61,6 +61,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('categorias.index') }}">Busqueda</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('fichaje.index') }}">Control de horas</a>
+            </li>
         </ul>
         <!-- Botón de logout -->
         <div class="logout-button">
