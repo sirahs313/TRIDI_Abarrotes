@@ -62,7 +62,7 @@
                 <a class="nav-link" href="{{ route('categorias.index') }}">Busqueda</a>
             </li>
             <li class="nav-item">
-D
+
                 <a class="nav-link" href="{{ route('users.index') }}">Administrar empleados</a>
 
                 <a class="nav-link" href="{{ route('fichaje.index') }}">Control de horas</a>
