@@ -1,4 +1,4 @@
-@extends('template.plantilla')
+@extends('templeate.plantilla')
 
 @section('Contenedor')
     <h1>TIENDA LA MORENA</h1>
