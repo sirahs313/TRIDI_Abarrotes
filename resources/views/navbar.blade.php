@@ -12,6 +12,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('producto.index') }}">Productos</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('categorias.index') }}">Busqueda</a>
+            </li>
         </ul>
         @if (Auth::check())
             <ul class="navbar-nav ml-auto">
