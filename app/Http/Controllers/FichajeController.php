@@ -11,18 +11,25 @@ class FichajeController extends Controller
 {
     public function index()
     {
+        $fichajes = Fichaje::with('empleado') 
+                    ->orderBy('hora_entrada', 'desc')
+                    ->get();
+    
+        return view('fichaje', ['fichajes' => $fichajes]);  
+
         $fichajes = Fichaje::with('empleado')  // Asegúrate de que la relación 'empleado' está definida en el modelo Fichaje
             ->orderBy('hora_entrada', 'desc')
             ->get();
 
         return view('fichaje', ['fichajes' => $fichajes]);  // Pasando la variable a la vista
+
     }
 
 
     public function registrarEntrada(Request $request)
     {
         $fichaje = Fichaje::create([
-            'empleado_id' => $request->empleado_id,  // Asumiendo que se envía desde el formulario
+            'empleado_id' => $request->empleado_id,  
             'hora_entrada' => Carbon::now(),
         ]);
 
