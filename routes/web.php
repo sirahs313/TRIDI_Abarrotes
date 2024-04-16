@@ -4,7 +4,7 @@ use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VentaController;
-
+use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\FichajeController;
 use Illuminate\Support\Facades\Auth;
 
@@ -39,5 +39,13 @@ Route::put('/users/{user}', [UserController::class, 'update'])->name('users.upda
 
 Route::get('/productos', [ProductoController::class, 'index'])->name('producto.index');
 
+Route::get('/compras', [App\Http\Controllers\CompraController::class, 'index'])->name('compras');
+Route::post('/compras', [App\Http\Controllers\CompraController::class, 'store'])->name('compras.store');
+Route::get('/proveedores', [ProveedorController::class, 'index'])->name('proveedores.index');
+Route::post('/proveedores', [ProveedorController::class, 'store'])->name('proveedores.store');
 
+Route::get('/fichaje', [FichajeController::class, 'index'])->name('fichaje.index');
+Route::post('/fichaje/entrada', [FichajeController::class, 'registrarEntrada'])->name('fichaje.entrada');
+Route::post('/fichaje/salida', [FichajeController::class, 'registrarSalida'])->name('fichaje.salida');
+Route::delete('/fichaje/{id}', [FichajeController::class, 'destroy'])->name('fichaje.destroy');
 

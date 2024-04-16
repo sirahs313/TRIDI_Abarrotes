@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('fichajes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('empleado_id')->constrained();
+            $table->unsignedBigInteger('empleado_id');
             $table->dateTime('hora_entrada')->nullable();
             $table->dateTime('hora_salida')->nullable();
             $table->timestamps();
+        
+            $table->foreign('empleado_id')->references('id')->on('empleados')->onDelete('cascade');
         });
         
     }

@@ -6,14 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 
-class Empleados extends Model
+class Empleado extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['Nombre','Puesto','Telefono','Direccion','User'];
-
-    public function user()
-    {
-        return $this->hasOne(User::class);
-    }
+    protected $fillable = ['Nombre', 'Puesto', 'Telefono', 'Direccion', 'User'];
+    
 }
