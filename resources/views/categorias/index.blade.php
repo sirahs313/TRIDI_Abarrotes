@@ -1,3 +1,4 @@
+@include('navbar')
 @extends('templeate.plantilla')
 
 @section('Contenedor')
