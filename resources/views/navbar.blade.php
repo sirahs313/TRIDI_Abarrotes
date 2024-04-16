@@ -53,13 +53,16 @@
                 <a class="nav-link active" href="">Ventas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Compras</a>
+                <a class="nav-link" href="{{ route('compras') }}">Compras</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('producto.index') }}">Productos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('categorias.index') }}">Busqueda</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('proveedores.index') }}">Proveedores</a>
             </li>
         </ul>
         <!-- Botón de logout -->
