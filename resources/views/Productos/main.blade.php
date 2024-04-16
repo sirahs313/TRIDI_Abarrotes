@@ -13,9 +13,26 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                @foreach($registros as $registro)
-                <button class="btn btn-primary">{{ $registro->descrip }} <br> {{ $registro->stock }}</button>
-                @endforeach
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Descrip</th>
+                            <th>Stock</th>
+                            <th>PU</th>
+                            <th>Categoria</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($productos as $producto)
+                            <tr>
+                                <td>{{ $producto->descrip }}</td>
+                                <td>{{ $producto->stock }}</td>
+                                <td>{{ $producto->PU }}</td>
+                                <td>{{ $producto->Categoria }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                    </table>              
             </div>
             <div class="col-md-4">
 
