@@ -28,6 +28,14 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/users', 'UserController@index')->name('users.index');
+
+Route::get('/users', [UserController::class, 'index']);
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::post('/users', [UserController::class, 'store'])->name('users.store');
+Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
+
 
 Route::get('/productos', [ProductoController::class, 'index'])->name('producto.index');
 
