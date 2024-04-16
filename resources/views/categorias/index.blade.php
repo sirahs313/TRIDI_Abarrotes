@@ -17,6 +17,7 @@
     <div class="card">
         <div class="card-header">
             <!-- Botón para abrir el modal de creación -->
+            
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCrearCategoria">Crear</button>
         </div>
         <div class="card-body">
