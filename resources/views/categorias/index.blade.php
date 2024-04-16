@@ -36,7 +36,8 @@
                             <td>{{$categoria->nombre}}</td>
                             <td class="btn-group">
                                 <a href="{{ route('categorias.show',$categoria->id)}}" class="btn btn-primary">+</a>
-                                <a href="{{ route('categorias.edit',$categoria->id)}}" class="btn btn-warning">Editar</a>
+                                <!-- Botón para abrir el modal de edición -->
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditarCategoria{{$categoria->id}}">Editar</button>
                                 <form id='frmDatos'action="{{route('categorias.destroy',$categoria->id)}}" method="POST">
                                     @method('delete')
                                     @csrf
@@ -44,6 +45,33 @@
                                 </form>
                             </td>
                         </tr>
+                        <!-- Modal de edición para cada categoría -->
+                        <div class="modal fade" id="modalEditarCategoria{{$categoria->id}}" tabindex="-1" aria-labelledby="modalEditarCategoria{{$categoria->id}}Label" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalEditarCategoria{{$categoria->id}}Label">Editar Categoría</h5>
+                                        <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- Contenido del formulario de edición -->
+                                        <form action="{{ route('categorias.update',$categoria->id) }}" method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                            <div class="mb-3">
+                                                <label for="codigo{{$categoria->id}}" class="form-label">Código</label>
+                                                <input type="text" name="codigo" id="codigo{{$categoria->id}}" class="form-control" value="{{$categoria->codigo}}">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="nombre{{$categoria->id}}" class="form-label">Nombre</label>
+                                                <input type="text" name="nombre" id="nombre{{$categoria->id}}" class="form-control" value="{{$categoria->nombre}}">
+                                            </div>
+                                            <button type="submit" class="btn btn-success">Guardar</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     @endforeach
                 </tbody>
                 <tfoot>
@@ -56,33 +84,6 @@
     </div>
 </div>
 
-<!-- Modal para el formulario de creación -->
-<div id="modalCrearCategoria" class="modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Crear Categoría</h5>
-                <!-- Botón de cierre (la "X") -->
-                <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Contenido del formulario de creación -->
-                <form action="{{ route('categorias.store') }}" method="POST">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="codigo" class="form-label">Código</label>
-                        <input type="text" name="codigo" id="codigo" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" name="nombre" id="nombre" class="form-control">
-                    </div>
-                    <button type="submit" class="btn btn-success">Enviar</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection
 
 @section('scripts')
