@@ -36,4 +36,8 @@ Route::post('/compras', [App\Http\Controllers\CompraController::class, 'store'])
 Route::get('/proveedores', [ProveedorController::class, 'index'])->name('proveedores.index');
 Route::post('/proveedores', [ProveedorController::class, 'store'])->name('proveedores.store');
 
+Route::get('/fichaje', [FichajeController::class, 'index'])->name('fichaje.index');
+Route::post('/fichaje/entrada', [FichajeController::class, 'registrarEntrada'])->name('fichaje.entrada');
+Route::post('/fichaje/salida', [FichajeController::class, 'registrarSalida'])->name('fichaje.salida');
+Route::delete('/fichaje/{id}', [FichajeController::class, 'destroy'])->name('fichaje.destroy');
 
