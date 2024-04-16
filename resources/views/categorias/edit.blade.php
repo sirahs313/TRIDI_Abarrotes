@@ -1,4 +1,4 @@
-@extends('template.plantilla')
+@extends('templeate.plantilla')
 @section('Contenedor')
 <form action="{{route('categorias.update',$categoria->id)}}" method="POST">
 @csrf

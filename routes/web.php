@@ -4,6 +4,7 @@ use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VentaController;
+
 use App\Http\Controllers\FichajeController;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,4 +26,10 @@ Route::delete('categorias/{id}',[CategoriaController::class,'destroy'])->name('c
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('/productos', [ProductoController::class, 'index'])->name('producto.index');
+
+
+
