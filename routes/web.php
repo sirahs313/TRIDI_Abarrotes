@@ -4,6 +4,7 @@ use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VentaController;
+
 use App\Http\Controllers\FichajeController;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,4 +24,10 @@ Route::get('principal', [UserController::class, 'home'])->name('principal'); // 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('/productos', [ProductoController::class, 'index'])->name('producto.index');
+
+
+
