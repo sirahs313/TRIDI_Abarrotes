@@ -53,7 +53,7 @@
                 <a class="nav-link active" href="">Ventas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Compras</a>
+                <a class="nav-link" href="{{ route('compras') }}">Compras</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('producto.index') }}">Productos</a>
@@ -62,7 +62,11 @@
                 <a class="nav-link" href="{{ route('categorias.index') }}">Busqueda</a>
             </li>
             <li class="nav-item">
+<<<<<<< HEAD
                 <a class="nav-link" href="{{ route('fichaje.index') }}">Control de horas</a>
+=======
+                <a class="nav-link" href="{{ route('proveedores.index') }}">Proveedores</a>
+>>>>>>> f519935ddd9692260d6fab90095c241760258771
             </li>
         </ul>
         <!-- Botón de logout -->
