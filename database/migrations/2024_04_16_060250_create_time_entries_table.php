@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('fichajes', function (Blueprint $table) {
+        Schema::create('time_entries', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('empleado_id');
-            $table->dateTime('hora_entrada')->nullable();
-            $table->dateTime('hora_salida')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->dateTime('start_time');
+            $table->dateTime('end_time')->nullable();
             $table->timestamps();
         
-            $table->foreign('empleado_id')->references('id')->on('empleados')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users');
         });
         
     }
@@ -28,8 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('fichajes');
+        Schema::dropIfExists('time_entries');
     }
-
-    
 };
