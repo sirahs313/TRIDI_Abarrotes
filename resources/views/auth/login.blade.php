@@ -157,10 +157,10 @@
     <h3>Inicio de Sesion</h3>
 
     <label for="username">Correo Electronico</label>
-    <input type="text" name="email" placeholder="Email or Phone" id="username">
+    <input type="text" name="email" placeholder="Correo" id="username">
 
     <label for="password">Contraseña</label>
-    <input type="password" name="password" placeholder="Password" id="password">
+    <input type="password" name="password" placeholder="Contraseña" id="password">
 
     <button type="submit">Ingresar</button>
     
