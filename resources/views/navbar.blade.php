@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" href="{{ route('ventas.create') }}">Ventas</a>
+                <a class="nav-link active" href="">Ventas</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Compras</a>
