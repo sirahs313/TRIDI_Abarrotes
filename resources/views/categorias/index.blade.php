@@ -34,7 +34,7 @@
                             <td class="btn-group">
                                 <a href="{{ route('categorias.show',$categoria->id)}}" class="btn btn-primary">+</a>
                                 <a href="{{ route('categorias.edit',$categoria->id)}}" class="btn btn-warning">Editar</a>
-                                <form action="{{route('categorias.destroy',$categoria->id)}}" method="POST">
+                                <form id='frmDatos'action="{{route('categorias.destroy',$categoria->id)}}" method="POST">
                                     @method('delete')
                                     @csrf
                                     <input type="submit" value="ELiminar" class="btn btn-danger">
@@ -51,4 +51,26 @@
             </table>
         </div>
     </div>
+@endsection
+@section('scripts')
+<script>
+  $('#frmDatos').on('submit', function(e) {
+    e.preventDefault();
+    Swal.fire({
+        title: "¿Estas seguro?",
+        text: "No se podra revertir!",
+        icon: "Peligro",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Si, ELIMINA!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Envía el formulario después de confirmar la eliminación
+            $('#frmDatos').unbind('submit').submit();
+        }
+    });
+});
+
+</script>
 @endsection
